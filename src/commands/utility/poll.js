@@ -93,7 +93,6 @@ module.exports = {
         const poll = await db.get("poll-" + args[0]);
 
         if (args[1] === "results") {
-
             let response = "Noch keine Stimmen vorhanden";
             if (Object.values(poll.votes).filter(v => v && v.length > 0).length > 0) {
                 response = "## Stimmen:";
@@ -157,6 +156,8 @@ module.exports = {
             interaction.message.edit({content: response, embeds: [embed], components: []});
 
             interaction.reply({ content: "Umfrage wurde beendet", flags: MessageFlags.Ephemeral });
+
+            await db.delete("poll-" + args[0]);
         }
         else {
             if (poll.deadline && poll.deadline * 1000 < Date.now())
