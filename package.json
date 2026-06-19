@@ -1,0 +1,19 @@
+{
+  "name": "the-new-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env ./src/index.js",
+    "register-commands": "node --env-file=.env ./src/register-commands.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@keyv/sqlite": "^4.0.8",
+    "discord.js": "^14.26.4",
+    "keyv": "^5.6.0"
+  }
+}
