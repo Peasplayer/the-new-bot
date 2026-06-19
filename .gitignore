@@ -1,4 +1,4 @@
 .env
 node_modules/
-db.sqlite
+volume/db.sqlite
 .idea/

@@ -5,7 +5,7 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, MessageFlags } = require('discord.js');
 const TOKEN = process.env.TOKEN;
 
-const keyvSqlite = new KeyvSqlite('sqlite://./db.sqlite');
+const keyvSqlite = new KeyvSqlite('sqlite://./volume/db.sqlite');
 const keyv = new Keyv({ store: keyvSqlite });
 
 keyv.on('error', err => console.log('Connection Error', err));
