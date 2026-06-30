@@ -113,7 +113,7 @@ module.exports = {
         else if (args[1] === "stop") {
             if (!interaction.member.permissions.has(["MANAGE_MESSAGES"]) && interaction.user.id !== interaction.message.interaction.user.id)
                 return interaction.reply({
-                    content: '❌ | Die fehlt die entsprechende Berechtigung',
+                    content: '❌ | Dir fehlt die entsprechende Berechtigung',
                     flags: MessageFlags.Ephemeral,
                 });
 
