@@ -42,7 +42,9 @@ for (const folder of commandFolders) {
 
 client.on(Events.InteractionCreate, async (interaction) => {
     if (interaction.isButton()) {
-        const cmdName = interaction.customId.split(";")[0];
+        let cmdName = interaction.customId.split(";")[0];
+        if (cmdName === "self-role")
+            cmdName = "selfrole";
         const command = interaction.client.commands.get(cmdName);
 
         if ('button' in command) {
