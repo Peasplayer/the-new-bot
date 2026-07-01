@@ -98,7 +98,7 @@ module.exports = {
                 fields.push({ name: _role.label, value: `<@&${_role.id}>`, inline: true });
             }
 
-            const msg = interaction.guild.channels.resolve(sr.channel).messages.resolve(sr.message);
+            const msg = await (await interaction.guild.channels.fetch(sr.channel)).messages.fetch(sr.message);
             const embed = EmbedBuilder.from(msg.embeds[0]);
             embed.setFields(...fields);
             await msg.edit({ embeds: [embed], components: rows });
