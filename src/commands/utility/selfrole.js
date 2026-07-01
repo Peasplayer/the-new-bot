@@ -93,7 +93,7 @@ module.exports = {
                     rows.push(new ActionRowBuilder());
 
                 const row = rows[Math.floor(i / 5)];
-                row.addComponents(new ButtonBuilder().setCustomId("selfrole;" + id + ";" + i).setLabel(_role.label).setStyle(ButtonStyle.Primary));
+                row.addComponents(new ButtonBuilder().setCustomId("selfrole;" + id + ";" + i).setLabel(_role.label).setStyle(ButtonStyle.Secondary));
 
                 fields.push({ name: _role.label, value: `<@&${_role.id}>`, inline: true });
             }
